@@ -1,11 +1,12 @@
 {
-  "name": "webpack-learn",
+  "name": "webpack-react-starter",
   "version": "1.0.0",
-  "description": "learning opportunity",
+  "description": "custom built webpack v4 react build setup",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack --config webpack.config.prod.js",
+    "dev": "webpack-dev-server --open --config webpack.config.dev.js"
   },
   "keywords": [
     "webpack",
@@ -14,7 +15,20 @@
   "author": "denisos",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.3",
+    "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.25.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

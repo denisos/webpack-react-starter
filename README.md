@@ -99,3 +99,16 @@ change package.json to run webpack-dev-server instead of webpack-config
 
 `npm run dev` will now run app on http://localhost:9000/ and auto open and it live reloads when make changes in the app!
 
+
+### generate sourcemaps for debugging
+the code running in the browser is the converted code which is not the same as the code I wrote, sourcemaps will map the converted code back to the original code so what I debug is what I wrote
+
+add `devtool: 'source-map'` option to webpack.config.dev.js and rerun the app with chrome debugger open
+
+
+### add support for proposed js features
+`npm i -D @babel/plugin-proposal-class-properties`   which adds support for proposed class changes
+
+change webpack.config.base.js as a plugin  
+
+this is for example, we don't use classes for react, functional ftw...right? eh?

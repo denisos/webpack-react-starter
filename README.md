@@ -51,13 +51,14 @@ this also puts an executable in `node_modules/.bin` which you can run like so `$
 
 but run using preset `$(npm bin)/babel ./src/greet.js --presets=@babel/preset-env` and it down converts modern js to older code
 
-# add babel-loader
+### add babel-loader
 used to transform modern js code into older js 
 added options in `module` property to use babel-loader
 
 now we have build setup to run & build plain javascript ^
 
-# convert to react app
+
+### convert to react app
 install babel react preset: `npm i -D @babel/preset-react`
 
 add preset to loader list in webpack.config
@@ -65,6 +66,7 @@ add preset to loader list in webpack.config
 add simple React component and use in index.js
 
 run `npm run build`   and now we see /dist/app.bundle.js contains react and our simple app
+
 
 ### add HTML file to contain react app
 add webpack-html-plugin to include an html file `npm i -D html-webpack-plugin`
@@ -87,6 +89,7 @@ create base, prod and dev webpack config files (prod and dev "inherit base")
 
 change package.json scripts to pass config to use e.g. `"build": "webpack --config webpack.config.prod.js",`
 
+
 ### add a web server to live load the page
  `npm i -D webpack-dev-server`
 
@@ -94,5 +97,5 @@ change package.json to run webpack-dev-server instead of webpack-config
   - added --open option to auto open when run dev 
   - changed port to 9000
 
-when run `npm run dev` will run on http://localhost:9000/ and auto open and it live reloads when make changes in the app!
+`npm run dev` will now run app on http://localhost:9000/ and auto open and it live reloads when make changes in the app!
 

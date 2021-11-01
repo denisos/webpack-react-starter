@@ -20,6 +20,8 @@ hot reloads
 ## steps followed to assemble
 webpack from scratch (using v4 of webpack per tutorial..latest is v5) https://webpack.js.org/concepts/
 
+why not webpack v5? simple the course is v4 so I followed that. But a next step is to configure a webpack v5 setup.
+
 ### bootstrap with webpack
 
  `npm init`
@@ -112,3 +114,23 @@ add `devtool: 'source-map'` option to webpack.config.dev.js and rerun the app wi
 change webpack.config.base.js as a plugin  
 
 this is for example, we don't use classes for react, functional ftw...right? eh?
+
+### auto include styles
+add style and css loaders to auto add a styles tag in the html
+`npm i -D css-loader style-loader`
+
+### add support for hot react reload (retain react state)
+`npm i -S react-hot-loader`
+
+changed App.js to use like docs: https://github.com/gaearon/react-hot-loader
+
+and added new npm script command in package.json
+
+### add webpack-bundle-analyzer to analyze build size and content
+`npm i -D webpack-bundle-analyzer`
+
+change webpack prod config to use
+
+see https://github.com/webpack-contrib/webpack-bundle-analyzer
+
+to use: `npm run build` and `open dist/bundle_sizes.html`
